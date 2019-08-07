@@ -1,0 +1,13 @@
+{
+  "name": "eval-user-code",
+  "version": "1.0.0",
+  "description": "A simple package designed to test user-submitted code by passing it through a pre-defined testing function.",
+  "main": "index.js",
+  "author": "Bret Cameron <bretcameron@gmail.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "vm2": "^3.8.3"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "userSolutionStr": "function evenAndOdd(arr) { return [arr.filter(el => el % 2 === 0).sort(), arr.filter(el => el % 2 === 1).sort()];};",
+  "courseSolutionStr": "function evenAndOdd(arr) { return [arr.filter(el => el % 2 === 0).sort(), arr.filter(el => el % 2 === 1).sort()];};",
+  "testFunctionStr": "function test(userSolution, courseSolution) { let map = new Map(); for (let i = 0; i < 10; i++) { let randLength = parseInt(Math.random() * 10); let randArray = [...Array(randLength)].map(e => ~~(Math.random() * randLength)); let description = 'CASE: evenAndOdd([' + randArray + '])' + ' ' + 'EXPECTED: [[' + userSolution(randArray)[0] + '], [' + userSolution(randArray)[1] + ']]' + ' ' + 'GOT: [[' + courseSolution(randArray)[0] + '], [' + courseSolution(randArray)[1] + ']]' ; let bool = _.isEqual(userSolution(randArray), courseSolution(randArray)); map.set(description, bool); } return map; }"
+}
