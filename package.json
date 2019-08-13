@@ -5,9 +5,14 @@
   "main": "index.js",
   "author": "Bret Cameron <bretcameron@gmail.com>",
   "license": "UNLICENSED",
+  "scripts": {
+    "test": "mocha"
+  },
   "private": true,
   "dependencies": {
+    "chai": "^4.2.0",
     "lodash": "^4.17.15",
+    "mocha": "^6.2.0",
     "vm2": "^3.8.3"
   }
 }
