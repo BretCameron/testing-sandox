@@ -1,4 +1,7 @@
-const assert = require('assert');
+const { NodeVM } = require('vm2');
+const runTests = require('./test/runTests');
+
+const code = String(`
 describe('TEST TITLE 1', function () {
   describe('TEST TITLE 2', function () {
     describe('TEST TITLE 3', function () {
@@ -16,7 +19,14 @@ describe('TEST TITLE 4', function () {
   it('should return -1 when the value is not present', function () {
     assert.equal([1, 2, 3].indexOf(4), -1);
   });
-  it(`should return ${[1, 2, 3].indexOf(2)} when the value 2 is present`, function () {
+  it('should return' + [1, 2, 3].indexOf(2) + 'when the value 2 is present', function () {
     assert.equal([1, 2, 3].indexOf(2), 1);
   });
 });
+`);
+
+// console.log(code);
+
+runTests(code)
+  // runTests('./test/assert.js')
+  .then(e => console.log(e));
