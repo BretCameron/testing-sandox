@@ -1,32 +1,26 @@
 const { NodeVM } = require('vm2');
 const runTests = require('./test/runTests');
+const util = require('util');
 
-const code = String(`
-describe('TEST TITLE 1', function () {
-  describe('TEST TITLE 2', function () {
-    describe('TEST TITLE 3', function () {
-      it('should return -1 when the value is not present', function () {
-        assert.equal([1, 2, 3].indexOf(4), -1);
-      });
-      it('should return 2 when the value 3 is present', function () {
-        assert.equal([1, 2, 3].indexOf(2), 1);
-      });
-    });
+const userSolution = `
+function addOne(x) {
+  return x + 1;
+}`
+
+const testCases = `
+for (let i = 0; i < 3; i++) {
+describe('addOne', function() {
+  it('should return 3 when the value is 2', function() {
+    assert.equal(addOne(2), 3);
   });
-});
-
-describe('TEST TITLE 4', function () {
-  it('should return -1 when the value is not present', function () {
-    assert.equal([1, 2, 3].indexOf(4), -1);
+  it('should return 0 when the value is -1', function() {
+    assert.equal(addOne(-1), 1);
   });
-  it('should return' + [1, 2, 3].indexOf(2) + 'when the value 2 is present', function () {
-    assert.equal([1, 2, 3].indexOf(2), 1);
+  it('return a number', function() {
+    assert.isNumber(addOne(-1));
   });
-});
-`);
+})}`;
 
-// console.log(code);
 
-runTests(code)
-  // runTests('./test/assert.js')
-  .then(e => console.log(e));
+runTests(testCases, userSolution)
+  .then(e => console.log(util.inspect(e, { depth: 4 })));
