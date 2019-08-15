@@ -37,7 +37,7 @@ describe('addOne', function() {
   it('should return 0 when the value is -1', function() {
     assert.equal(addOne(-1), 1);
   });
-  it('return a number', function() {
+  it('should return a number', function() {
     assert.isNumber(addOne(-1));
   });
 })`;
@@ -77,6 +77,11 @@ Then we'll get an object like this:
             passed: true },
           { description: 'should return 0 when the value is -1',
             passed: true },
-          { description: 'return a number', passed: true } ],
+          { description: 'should return a number', 
+            passed: true } ],
        duration: '18ms' } ] }
 ```
+
+## Dependencies
+
+This package depends on [Mocha](https://www.npmjs.com/package/mocha) and [Chai](https://www.npmjs.com/package/chai) for testing, and [vm2](https://www.npmjs.com/package/vm2) for sandboxing.
