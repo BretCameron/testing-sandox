@@ -22,13 +22,13 @@ The `userSolution` string must use vanilla JavaScript, but that includes modern 
 
 Require the helper function `runTests()` from wherever it is stored:
 
-```
+```javascript
 const runTests = require('./path/to/file');
 ```
 
 Pass in your strings:
 
-```
+```javascript
 const testCases = `
 describe('addOne', function() {
   it('should return 3 when the value is 2', function() {
@@ -52,7 +52,7 @@ runTests(testCases, userSolution);
 
 The function returns a `Promise`, which contains the results of the tests. If we extend the code above like so:
 
-```
+```javascript
 const util = require('util');
 
 runTests(testCases, userSolution)
@@ -61,25 +61,25 @@ runTests(testCases, userSolution)
 
 Then we'll get an object like this:
 
-```
-{ summary:
-   { passed: 3,
-     failed: 0,
-     tests: 3,
-     suites: 1,
-     depth: 0,
-     duration: '32ms' },
-  data:
-   [ { depth: 0,
-       suite: 'addOne',
-       tests:
-        [ { description: 'should return 3 when the value is 2',
-            passed: true },
-          { description: 'should return 0 when the value is -1',
-            passed: true },
-          { description: 'should return a number', 
-            passed: true } ],
-       duration: '18ms' } ] }
+```json
+{ "summary":
+   { "passed": 3,
+     "failed": 0,
+     "tests": 3,
+     "suites": 1,
+     "depth": 0,
+     "duration": "32ms" },
+  "data":
+   [ { "depth": 0,
+       "suite": "addOne",
+       "tests":
+        [ { "description": "should return 3 when the value is 2",
+            "passed": true },
+          { "description": "should return 0 when the value is -1",
+            "passed": true },
+          { "description": "should return a number", 
+            "passed": true } ],
+       "duration": "18ms" } ] }
 ```
 
 ## Dependencies
