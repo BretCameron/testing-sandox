@@ -1,15 +1,7 @@
 const Mocha = require('mocha');
 const fs = require('fs');
 const path = require('path');
-
-// Helper function(s)
-const ensureFinalSemicolon = (str) => /;(\s*)?$/.test(str.trim()) ? str + ' ' : str + '; ';
-
-const randomString = (length = 32, chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') => {
-  let result = '';
-  for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
-  return result;
-}
+const { randomString, ensureFinalSemicolon } = require('./helpers');
 
 // Main export
 const runTests = async (testCases = '', userSolution = '') => {
