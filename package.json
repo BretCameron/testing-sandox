@@ -21,8 +21,6 @@
   "author": "Bret Cameron <bretcameron@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
-    "install": "node-gyp rebuild",
     "test": "mocha"
   },
   "private": false,
@@ -32,9 +30,7 @@
   },
   "dependencies": {
     "chai": "^=4.2.0",
-    "lodash": "^=4.17.15",
     "mocha": "^=6.2.0",
-    "uuid": "^=3.3.2",
     "vm2": "^=3.8.3"
   }
 }
