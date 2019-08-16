@@ -1,6 +1,6 @@
-# eval-user-code
+# testing-sandbox
 
-A package designed to test user-submitted JavaScript code with user-submitted tests (using Mocha and Chai). All user-submitted code is run in a sandbox environment.
+A package designed to test user-submitted JavaScript code with user-submitted tests (using Mocha and Chai). All user-submitted code is run in a vm2 sandbox environment.
 
 ## runTests(testCases, userSolution)
 
@@ -55,31 +55,42 @@ The function returns a `Promise`, which contains the results of the tests. If we
 ```javascript
 const util = require('util');
 
-runTests(testCases, userSolution)
-  .then(e => console.log(util.inspect(e, { depth: 4 })));
+runTests(testCases, userSolution).then(e =>
+  console.log(util.inspect(e, { depth: 4 }))
+);
 ```
 
 Then we'll get an object like this:
 
 ```json
-{ "summary":
-   { "passed": 3,
-     "failed": 0,
-     "tests": 3,
-     "suites": 1,
-     "depth": 0,
-     "duration": "32ms" },
-  "data":
-   [ { "depth": 0,
-       "suite": "addOne",
-       "tests":
-        [ { "description": "should return 3 when the value is 2",
-            "passed": true },
-          { "description": "should return 0 when the value is -1",
-            "passed": true },
-          { "description": "should return a number", 
-            "passed": true } ],
-       "duration": "18ms" } ] }
+{
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "tests": 3,
+    "suites": 1,
+    "depth": 0,
+    "duration": "32ms"
+  },
+  "data": [
+    {
+      "depth": 0,
+      "suite": "addOne",
+      "tests": [
+        {
+          "description": "should return 3 when the value is 2",
+          "passed": true
+        },
+        {
+          "description": "should return 0 when the value is -1",
+          "passed": true
+        },
+        { "description": "should return a number", "passed": true }
+      ],
+      "duration": "18ms"
+    }
+  ]
+}
 ```
 
 ## Dependencies

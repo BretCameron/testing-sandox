@@ -1,14 +1,24 @@
 {
-  "name": "eval-user-code",
+  "name": "testing-sandbox",
   "version": "1.0.0",
-  "description": "A simple package designed to test user-submitted code by passing it through a pre-defined testing function.",
+  "description": "A package designed to test user-submitted JavaScript code with user-submitted tests (using Mocha and Chai). All user-submitted code is run in a vm2 sandbox environment.",
+  "keywords": [
+    "testing",
+    "sandbox",
+    "mocha",
+    "chai",
+    "vm2",
+    "safe",
+    "user-submitted",
+    "string"
+  ],
   "main": "index.js",
   "author": "Bret Cameron <bretcameron@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "test": "mocha"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "chai": "^4.2.0",
     "lodash": "^4.17.15",

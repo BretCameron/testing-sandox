@@ -8,7 +8,7 @@ function addOne(x) {
 }`
 
 const testCases = `
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 1; i++) {
 describe('addOne', function() {
   it('should return 3 when the value is 2', function() {
     assert.equal(addOne(2), 3);
