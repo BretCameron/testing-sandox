@@ -123,3 +123,7 @@ const runTests = async (testCases = '', userSolution = '') => {
 };
 
 module.exports = runTests;
+
+// Cannot Execute Mocha When Not On Path
+// https://stackoverflow.com/questions/43571466/npm-packages-not-available-when-installed-locally
+// https://stackoverflow.com/questions/9679932/how-to-use-package-installed-locally-in-node-modules
